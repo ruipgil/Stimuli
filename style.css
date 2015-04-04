@@ -1,0 +1,17 @@
+#container {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	text-align: center;
+}
+
+#year {
+	font-size: 80pt;
+	display: inline;
+}
+#mili {
+	display: inline;
+	position: relative;
+	font-size: 30pt;
+	top: -15pt;
+}

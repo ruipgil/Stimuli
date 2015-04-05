@@ -40,7 +40,8 @@ function updateBackgroundImage() {
 
 	document.body.style.backgroundColor = 'black';
 	if(bg) {
-		document.body.style.backgroundImage = 'url('+bg.url+')';
+		var url = bg.url.split('/');
+		document.body.style.backgroundImage = 'url(./photos/'+url[url.length-1]+')';
 		document.querySelector('#image-credit').href = bg.creditUrl || bg.source;
 		document.querySelector('#image-credit').innerText = bg.credit || 'uncredited';
 		setTextColor(bg.color || 'white');

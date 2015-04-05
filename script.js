@@ -1,16 +1,19 @@
 var MS_PER_YEAR = 31556900000;
+var birth;
 
-function showAge(birth) {
+function showAge() {
+	document.querySelector('.age').style.display = 'block';
+	document.querySelector('.question').style.display = 'none';
+}
+
+function updateAge() {
 	var now = new Date();
-	var diff = ('' + ((now - birth)/MS_PER_YEAR)).split('.');
+	var diff = ((now - birth)/MS_PER_YEAR).toFixed(9).split('.');
 	var year = diff[0];
 	var mili = diff[1];
 
-	document.querySelector('.age').style.display = 'block';
-	document.querySelector('.question').style.display = 'none';
-
 	document.querySelector('.data-year').innerText = year;
-	document.querySelector('.data-mili').innerText = mili;
+	document.querySelector('.data-mili').innerText = mili;	
 }
 
 var load;
@@ -26,12 +29,41 @@ function askAge() {
 	})
 }
 
+function updateBackgroundImage() {
+	var bg = BACKGROUNDS[~~(Math.random()*BACKGROUNDS.length)];
+
+	if(bg.url) {
+		document.body.style.background = 'url('+bg.url+')';
+	} else if(bg.bgColor) {
+		document.body.style.background = bg.bgColor;
+	}
+
+	document.body.style.backgroundSize = 'cover';
+	document.querySelector('#year').style.color = bg.textColor;
+	document.querySelector('#mili').style.color = bg.textColor;
+}
+
 load = function () {
 	if(localStorage.getItem('birthdate')) {
-		showAge(new Date(Number(localStorage.getItem('birthdate'))));
+		showAge();
+		birth = new Date(Number(localStorage.getItem('birthdate')));
+		updateAge();
+		updateBackgroundImage();
 	} else {
 		askAge();
 	}
+}
+
+var frame;
+
+function startCycle() {
+	frame = setInterval(function() {
+		updateAge();
+	}, 100);
+}
+
+function stopCycle() {
+	// TODO
 }
 
 window.addEventListener('load', function() {

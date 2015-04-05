@@ -1,17 +1,36 @@
+* {
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+
 #container {
 	position: relative;
 	top: 50%;
 	transform: translateY(-50%);
 	text-align: center;
+	opacity: 0.9;
+	cursor: default;
 }
 
 #year {
 	font-size: 80pt;
 	display: inline;
+	opacity: 0.9;
+	//-webkit-text-stroke: 1px rgba(0,0,0,0.3);
 }
 #mili {
 	display: inline;
 	position: relative;
 	font-size: 30pt;
 	top: -15pt;
+	//-webkit-text-stroke: 1px rgba(0,0,0,0.3);
+}
+#image-credit {
+	opacity: 0.4;
+	color: white;
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	text-decoration: none;
+	text-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
 }

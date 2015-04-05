@@ -29,18 +29,26 @@ function askAge() {
 	})
 }
 
+function setTextColor(color) {
+	document.querySelector('#year').style.color = color;
+	document.querySelector('#mili').style.color = color;
+}
+
 function updateBackgroundImage() {
-	var bg = BACKGROUNDS[~~(Math.random()*BACKGROUNDS.length)];
+	var index = Math.floor(Math.random()*BACKGROUNDS.length);
+	var bg = BACKGROUNDS[index];
 
-	if(bg.url) {
-		document.body.style.background = 'url('+bg.url+')';
-	} else if(bg.bgColor) {
-		document.body.style.background = bg.bgColor;
+	document.body.style.backgroundColor = 'black';
+	if(bg) {
+		document.body.style.backgroundImage = 'url('+bg.url+')';
+		document.querySelector('#image-credit').href = bg.creditUrl || bg.source;
+		document.querySelector('#image-credit').innerText = bg.credit || 'uncredited';
+		setTextColor(bg.color || 'white');
+		document.body.style.backgroundSize = 'cover';
+	}else{
+		setTextColor('white');
 	}
-
-	document.body.style.backgroundSize = 'cover';
-	document.querySelector('#year').style.color = bg.textColor;
-	document.querySelector('#mili').style.color = bg.textColor;
+	
 }
 
 load = function () {
@@ -63,7 +71,7 @@ function startCycle() {
 }
 
 function stopCycle() {
-	// TODO
+	clearTimeout(frame);
 }
 
 window.addEventListener('load', function() {

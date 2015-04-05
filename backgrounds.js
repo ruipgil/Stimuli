@@ -1,66 +1,92 @@
 var BACKGROUNDS = [
-	{
-		bgColor: 'white',
-		textColor: 'black'
-	}, {
-		bgColor: 'black',
-		textColor: 'white'
-	}, {
-		url: 'https://i.imgur.com/YY3bLP7.jpg',
-		textColor: 'white'
-	}, {
-		url: 'https://drscdn.500px.org/photo/52866292/m=2048_k=1_a=1/2683707825210f5bb6d26e7c32d14738',
-		textColor: 'white'
-	}, {
-		url: 'https://i.imgur.com/9lDdLYR.jpg',
-		textColor: 'white'
-	}, {
-		url: 'https://upload.wikimedia.org/wikipedia/commons/e/eb/Mt_Fuji_NASA_ISS002-E-6971_large.jpg',
-		textColor: 'white'
-	}, {
-		url: 'https://i.imgur.com/Eq0Z7vm.jpg',
-		textColor: 'white'
-	}, {
-		url: 'https://drscdn.500px.org/photo/94050299/m=2048_k=1_a=1/aeb5bf761a91b69254bd0450c94df0b1',
-		textColor: 'gray'
-	}, {
-		url: 'https://i.imgur.com/fIdt7Fr.jpg',
-		textColor: 'gray'
-	}, {
-		url: 'https://i.imgur.com/jypHpBv.jpg',
-		textColor: 'white'
-	}, {
-		url: 'https://farm4.staticflickr.com/3928/15469288066_84ff96d7a7_k.jpg',
-		textColor: 'white'
-	}, {
-		url: 'http://c1.staticflickr.com/9/8710/16917063936_587fcea506_h.jpg',
-		textColor: 'white'
-	}, {
-		url: 'https://i.imgur.com/KjP1n1M.jpg',
-		textColor: 'white'
-	}, {
-		url: 'https://thenypost.files.wordpress.com/2015/02/canada-niagarafalls_-5.jpg',
-		textColor: 'black'
-	}, {
-		url: 'https://drscdn.500px.org/photo/81966069/m=2048_k=1_a=1/e814d39a797c3c399f87acdfdf552541',
-		textColor: 'white'
-	}, {
-		url: 'https://i.imgur.com/QdS7abu.jpg',
-		textColor: 'white'
-	}, {
-		url: 'https://i.imgur.com/wm7rwbz.jpg',
-		textColor: 'white'
-	}, {
-		url: 'https://i.imgur.com/MJqwwTn.jpg',
-		textColor: 'white'
-	}, {
-		url: 'https://drscdn.500px.org/photo/84758301/m=2048_k=1_a=1/c282fb8a105ec97e83a82bc61eb9f15d',
-		textColor: 'white'
-	}, {
-		url: 'https://drscdn.500px.org/photo/63772753/m=2048_k=1_a=1/7d0c02ef03f53bc558dcbd3d27fc01f3',
-		textColor: 'white'
-	}, {
-		url: 'https://i.imgur.com/i57x0J8.jpg',
-		textColor: 'white'
-	}
-];
+  { source: 'https://www.reddit.com/r/EarthPorn/comments/31im59/this_is_where_i_ate_my_breakfast_this_morning/',
+    textColor: 'white',
+    credit: 'r/Grickooo',
+    url: 'http://i.imgur.com/YEN5eZ1.jpg' },
+  { source: 'https://www.reddit.com/r/EarthPorn/comments/31hqoh/a_surreal_grotto_in_the_blue_mountains_australia/',
+    textColor: 'white',
+    credit: 'Geoff Hunter',
+    url: 'https://farm9.staticflickr.com/8729/16758616917_527f536c3b_k.jpg' },
+  { source: 'https://www.reddit.com/r/EarthPorn/comments/31g5as/ridge_hiking_in_central_switzerland_near_schwyz/',
+    textColor: 'white',
+    credit: 'r/omHK',
+    url: 'https://farm4.staticflickr.com/3699/9339898342_67175a6ed6_k.jpg' },
+  { source: 'https://www.reddit.com/r/EarthPorn/comments/31hogm/jordan_pond_acadia_national_park_maine_usa/',
+    textColor: 'white',
+    credit: 'r/devastated_czar',
+    url: 'https://farm6.staticflickr.com/5602/14964846804_52bbc8eeb4_o.jpg' },
+  { source: 'https://www.reddit.com/r/EarthPorn/comments/31hjjy/taken_from_a_helicopter_on_the_big_island_hawaii/',
+    textColor: 'white',
+    credit: 'r/sean9969',
+    url: 'http://i.imgur.com/A0mEmYG.jpg' },
+  { source: 'https://www.reddit.com/r/EarthPorn/comments/31icpm/typical_australian_countryside_near_lake/',
+    textColor: 'white',
+    credit: 'r/thedude64',
+    creditUrl: 'https://www.flickr.com/photos/atilla2008/16852450530/sizes/h/',
+    url: 'https://farm8.staticflickr.com/7724/16852450530_c4bb66f212_o.jpg' },
+  { source: 'https://www.reddit.com/r/EarthPorn/comments/31h4w8/gold_beach_oregon_13632x3048oc/',
+    textColor: 'white',
+    credit: 'r/sipbreh',
+    url: 'http://i.imgur.com/KecpMm9.jpg' },
+  { source: 'https://www.reddit.com/r/EarthPorn/comments/31hgdl/gentle_sunrise_kyaiktiyo_myanmar_2048x895_oc/',
+    textColor: 'white',
+    credit: 'r/MugaDWhale',
+    url: 'https://farm9.staticflickr.com/8634/15626722764_7a27876edd_k.jpg' },
+  { source: 'https://www.reddit.com/r/EarthPorn/comments/31gev8/annice_falls_oregon_3648_2736/',
+    textColor: 'white',
+    url: 'https://i.imgur.com/AeIr9ly.jpg' },
+  { source: 'https://www.reddit.com/r/EarthPorn/comments/31hf1r/came_across_some_sweet_terracotta_formations_on_a/',
+    textColor: 'white',
+    credit: 'r/SkateOrDefecate',
+    url: 'https://i.imgur.com/SWHt8ZH.jpg' },
+  { source: 'https://www.reddit.com/r/EarthPorn/comments/31htxa/sunset_on_lake_superior_oc_2736x1824/',
+    textColor: 'white',
+    credit: 'r/iandeloney',
+    credirUrl: 'https://www.flickr.com/photos/ianjamesdeloney/16160163254/',
+    url: 'https://farm9.staticflickr.com/8703/16160163254_e559212e2d_k.jpg' },
+  { source: 'https://www.reddit.com/r/EarthPorn/comments/31is93/black_sand_beach_near_vik_iceland_oc2688x1520/',
+    textColor: 'white',
+    credit: 'r/WikusMNU',
+    url: 'http://i.imgur.com/FpPP4xw.jpg' },
+  { source: 'https://www.reddit.com/r/EarthPorn/comments/31h61r/promise_land_tasmania_oc_2400x1800/',
+    textColor: 'white',
+    credit: 'r/Diakia',
+    url: 'http://i.imgur.com/8gAAafm.jpg' },
+  { source: 'https://www.reddit.com/r/EarthPorn/comments/31h06l/the_la_sal_mountains_in_utah_oc_2447_x_1632/',
+    textColor: 'white',
+    credit: 'r/heyimchandler',
+    url: 'http://i.imgur.com/gGS8Hhm.jpg' },
+  { source: 'https://www.reddit.com/r/EarthPorn/comments/31i9gu/the_southern_alps_on_the_way_to_arthurs_pass/',
+    textColor: 'white',
+    credit: 'r/spacesquid42',
+    creditUrl: 'https://www.flickr.com/photos/sydneyolsen/17038001262/',
+    url: 'https://farm9.staticflickr.com/8738/17038001262_51946d7371_o.jpg' },
+  { source: 'https://www.reddit.com/r/EarthPorn/comments/31ivch/oc_iceland_urridafoss_on_april_1st_20481064/',
+    textColor: 'white',
+    credit: 'r/bboo',
+    url: 'http://i.imgur.com/5knhCjL.jpg' },
+  { source: 'https://www.reddit.com/r/EarthPorn/comments/31ih5n/crystalline_sunset_on_roadtrip_from_melbourne_to/',
+    textColor: 'white',
+    credit: 'r/lizardauctioneer',
+    url: 'http://i.imgur.com/kwdn71p.jpg' },
+  { source: 'https://www.reddit.com/r/EarthPorn/comments/31j8my/lago_di_carezza_in_the_italian_dolomites/',
+    textColor: 'white',
+    credit: 'Afrank99',
+    url: 'https://upload.wikimedia.org/wikipedia/commons/5/54/Karersee_HDR.jpg' },
+  { source: 'https://www.reddit.com/r/EarthPorn/comments/31hkh4/beautiful_winter_day_at_caples_lake_ca_5184x2920oc/',
+    textColor: 'white',
+    credit: 'r/GeneScape',
+    originalUrl: 'https://www.flickr.com/photos/130944166@N05/16624076026/lightbox/',
+    url: 'https://farm9.staticflickr.com/8649/16624076026_7d7e539572_o.jpg' },
+  { source: 'https://www.reddit.com/r/EarthPorn/comments/31ipln/aurora_borealis_at_rouynnoranda_qc_canada_by/',
+    textColor: 'white',
+    credit: 'Charles Schiele Photography',
+    url: 'http://i.imgur.com/4GoGQS0.jpg' },
+  { source: 'https://www.reddit.com/r/EarthPorn/comments/31h6uz/sunset_panorama_at_pfeiffer_beach_state_park_in/',
+    textColor: 'white',
+    credit: 'r/OnceHadSexAMA',
+    url: 'http://i.imgur.com/6OVZpxM.jpg' },
+  { source: 'https://www.reddit.com/r/EarthPorn/comments/31iync/view_from_the_auskjeret_summit_stordal_norway/',
+    textColor: 'white',
+    credit: 'r/mamahani',
+    url: 'http://i.imgur.com/V00PD8D.jpg' } ];

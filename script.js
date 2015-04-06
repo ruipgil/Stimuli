@@ -34,8 +34,7 @@ function setTextColor(color) {
 	document.querySelector('#mili').style.color = color;
 }
 
-function updateBackgroundImage() {
-	var index = Math.floor(Math.random()*BACKGROUNDS.length);
+function setBackgroundImage(index){
 	var bg = BACKGROUNDS[index];
 
 	document.body.style.backgroundColor = 'black';
@@ -49,6 +48,11 @@ function updateBackgroundImage() {
 	}else{
 		setTextColor('white');
 	}
+}
+
+function updateBackgroundImage() {
+	var index = Math.floor(Math.random()*BACKGROUNDS.length);
+	setBackgroundImage(index);
 	
 }
 

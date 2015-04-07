@@ -21,12 +21,18 @@ var load;
 function askAge() {
 	document.querySelector('.age').style.display = 'none';
 	document.querySelector('.question').style.display = 'block';
+	document.querySelector('.question #date-input').autofocus = true;
 
-	document.querySelector('.question #ok').addEventListener('click', function() {
-		var value = document.querySelector('.question #date-input').value.split("/").map(function(elm){ return Number(elm); });
-		localStorage.setItem('birthdate', new Date(value[2], value[1]-1, value[0]).getTime());
-		load();
-	})
+	document.querySelector('.question #date-input').addEventListener('keypress', function(e) {
+		if(e.keyCode===13){
+			var value = document.querySelector('.question #date-input').value.split("-").map(function(elm){ return Number(elm); });
+			var date = new Date(value[0], value[1]-1, value[2]);
+			if(!isNaN(date.getTime())){
+				localStorage.setItem('birthdate', date.getTime());
+				load();
+			}
+		}
+	});
 }
 
 function setTextColor(color) {

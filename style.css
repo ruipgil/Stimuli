@@ -11,7 +11,20 @@
 	opacity: 0.9;
 	cursor: default;
 }
-
+.help {
+	opacity: 0.5;
+	font-size: 9pt;
+	color: gray;
+}
+input {
+	font-size: 9pt;
+}
+input::-webkit-calendar-picker-indicator{
+    display: none;
+}
+input::-webkit-input-placeholder{ 
+    visibility: hidden !important;
+}
 #year {
 	font-size: 80pt;
 	display: inline;

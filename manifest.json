@@ -4,5 +4,14 @@
 	"version": "0.1.1",
 	"chrome_url_overrides" : {
 		"newtab": "index.html"
-	}
+	},
+	"permissions": [
+		"storage",
+		"unlimitedStorage",
+		"http://i.imgur.com/*",
+		"http://*.staticflickr.com/*",
+		"https://*.staticflickr.com/*",
+		"http://upload.wikimedia.org/*",
+		"https://upload.wikimedia.org/*"
+	]
 }

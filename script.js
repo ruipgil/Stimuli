@@ -16,6 +16,23 @@ function updateAge() {
 	document.querySelector('.data-mili').innerText = mili;	
 }
 
+function imageToBase64(url, callback) {
+    var img = new Image();
+    img.crossOrigin = 'Anonymous';
+    img.onload = function(){
+		var canvas = document.createElement('canvas'),
+			ctx = canvas.getContext('2d'),
+			dataURL;
+		canvas.height = img.height;
+		canvas.width = img.width;
+		ctx.drawImage(img, 0, 0);
+		dataURL = canvas.toDataURL("image/jpeg");
+		callback(dataURL);
+		canvas = null; 
+	};
+	img.src = url;
+}
+
 var load;
 
 function askAge() {
@@ -42,15 +59,33 @@ function setTextColor(color) {
 
 function setBackgroundImage(index){
 	var bg = BACKGROUNDS[index];
+	console.log(index, bg);
+	console.log(url);
+	
 
 	document.body.style.backgroundColor = 'black';
 	if(bg) {
-		var url = bg.url.split('/');
-		document.body.style.backgroundImage = 'url(./photos/'+url[url.length-1]+')';
-		document.querySelector('#image-credit').href = bg.creditUrl || bg.source;
-		document.querySelector('#image-credit').innerText = bg.credit || 'uncredited';
-		setTextColor(bg.color || 'white');
-		document.body.style.backgroundSize = 'cover';
+		function setBgImage(img) {
+			document.body.style.backgroundImage = 'url('+img+')';
+			document.querySelector('#image-credit').href = bg.creditUrl || bg.source;
+			document.querySelector('#image-credit').innerText = bg.credit || 'uncredited';
+			setTextColor(bg.color || 'white');
+			document.body.style.backgroundSize = 'cover';
+		}
+		var url = bg.url;
+		var key = url;
+		chrome.storage.local.get(key, function(result) {
+			if(result[key]) {
+				setBgImage(result[key]);
+			} else {
+				imageToBase64(url, function(img) {
+					setBgImage(img);
+					var obj = {};
+					obj[key] = img;
+					chrome.storage.local.set(obj, function(a, b, c) {});
+				});
+			}
+		});
 	}else{
 		setTextColor('white');
 	}
